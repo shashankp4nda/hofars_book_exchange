@@ -33,6 +33,34 @@ const userSchema = mongoose.Schema({
         required: true
     },
 
+    rating: {
+        type: String,
+        default: "0"
+    },
+
+    phNo:{
+        type:String,
+        required: true,
+        
+    },
+    address:{
+        type:String,
+    },
+    country:{
+        type:String,
+    },
+    zipcode:{
+        type:String,
+    },
+    student:{
+        type: Boolean,
+        required: true,
+    },
+    classs:{
+        type:String,
+    },
+
+
 })
 
 const User = mongoose.model('users', userSchema);

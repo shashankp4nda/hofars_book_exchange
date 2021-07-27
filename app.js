@@ -55,14 +55,14 @@ app.get("/bookInfo", async (req, res) =>    {
 app.post("/signup", async (req, res) => {  
     try {
         console.log(req.body);
-        let {email, firstname,lastname,password} = req.body
+        let {email, firstname,lastname,password,rating, address,country, zipcode, phNo, student, classs} = req.body;
 
         const userexist = await User.findOne({email})
 
         if(!userexist)
         {
 
-            const user = await User.create({email,firstname,lastname,password,name:`${firstname} ${lastname}`})
+            const user = await User.create({email,firstname,lastname,password,rating, address,country, zipcode, phNo, student, classs, name:`${firstname} ${lastname}`})
     
             res.status(201).send(user)
         }
