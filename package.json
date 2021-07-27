@@ -1,7 +1,6 @@
 {
   "name": "hofars",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,5 +13,14 @@
     "express": "^4.17.1",
     "mongoose": "^5.13.2",
     "validator": "^13.6.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mayank888k/hofars_book_exchange.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mayank888k/hofars_book_exchange/issues"
+  },
+  "homepage": "https://github.com/mayank888k/hofars_book_exchange#readme",
+  "description": ""
 }
