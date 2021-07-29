@@ -24,8 +24,8 @@ app.use(bodyParser.json());
 app.post("/bookInfo", async (req, res) => {
     try {
         console.log(req.body);
-        const {title, MRP, author, description, category, genre} = req.body;
-        const book = await Book.create({title, MRP, author, description, category, genre})
+        const {bookName, MRP, author, description, category, genre, yearOfRelease, bookRating} = req.body;
+        const book = await Book.create({bookName, MRP, author, description, category, genre, yearOfRelease, bookRating})
         res.status(201).send(book)
     }
     catch ( error )     {
@@ -38,8 +38,8 @@ app.post("/bookInfo", async (req, res) => {
 app.get("/bookInfo", async (req, res) =>    {
     try     {
         console.log(req.body);
-        const title = req.body.title;
-        const searchItem = await Book.find({title});
+        const bookName = req.body.bookName;
+        const searchItem = await Book.find({bookName});
         res.send(searchItem);
     }
     catch (error)   {

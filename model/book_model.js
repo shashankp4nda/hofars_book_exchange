@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const validator = require('validator');
 
 const bookSchema = mongoose.Schema({
-    title: {
+    bookName: {
         type: String,
         required: true
     },
@@ -21,6 +21,13 @@ const bookSchema = mongoose.Schema({
     },
     genre: {
         type: String,
+    },
+    yearOfRelease: {
+        type: String,
+    },
+    bookRating: {
+        type: String,
+        default:"0",
     }
 })
 
