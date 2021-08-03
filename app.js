@@ -24,8 +24,9 @@ app.use(bodyParser.json());
 app.post("/bookInfo", async (req, res) => {
     try {
         console.log(req.body);
-        const {bookName, MRP, author, description, category, genre, yearOfRelease, bookRating} = req.body;
-        const book = await Book.create({bookName, MRP, author, description, category, genre, yearOfRelease, bookRating})
+        const {bookName, MRP, author, description, category, genre, yearOfRelease, bookRating, LenderName} = req.body;
+        const book = await Book.create({bookName, MRP, author, description, category, genre, yearOfRelease, bookRating,LenderName})
+        const Lender = await User.findOneAndUpdate({name: LenderName}, {$push: {lended: book.bookID}}, {new: true})
         res.status(201).send(book)
     }
     catch ( error )     {
