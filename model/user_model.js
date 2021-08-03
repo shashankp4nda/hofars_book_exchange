@@ -59,6 +59,8 @@ const userSchema = mongoose.Schema({
     classs:{
         type:String,
     },
+    borrowed: [{type: String}], 
+    lended: [{type: String}],
 
 
 })

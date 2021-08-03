@@ -28,7 +28,15 @@ const bookSchema = mongoose.Schema({
     bookRating: {
         type: String,
         default:"0",
-    }
+    },
+    LenderName:{
+        type:String,
+    },
+    bookID: {
+        type: String, 
+        default:String(Date.now()),
+    },
+
 })
 
 const Book = mongoose.model('books', bookSchema);
